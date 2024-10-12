@@ -4,18 +4,33 @@ package org.example.beans;
  * 保存bean信息
  */
 public class BeanDefinition {
-    private Class clazz;
+    private Class beanClass;
+
+    private PropertyValues propertyValues;
 
     public BeanDefinition(){}
     public BeanDefinition(Class<?> clazz){
-        this.clazz = clazz;
+        this.beanClass = clazz;
     }
 
-    public Class getClazz() {
-        return clazz;
+    public BeanDefinition(Class beanClass, PropertyValues propertyValues) {
+        this.beanClass = beanClass;
+        this.propertyValues = propertyValues;
     }
 
-    public void setClazz(Class clazz) {
-        this.clazz = clazz;
+    public Class getBeanClass() {
+        return beanClass;
+    }
+
+    public void setBeanClass(Class clazz) {
+        this.beanClass = clazz;
+    }
+
+    public PropertyValues getPropertyValues() {
+        return propertyValues;
+    }
+
+    public void setPropertyValues(PropertyValues propertyValues) {
+        this.propertyValues = propertyValues;
     }
 }
