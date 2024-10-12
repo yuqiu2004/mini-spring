@@ -1,11 +1,13 @@
-package org.example.beans;
+package org.example.beans.factory;
 
+import org.example.beans.registry.BeanDefinitionRegistry;
+import org.example.beans.config.BeanDefinition;
 import org.example.exception.BeansException;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory implements BeanDefinitionRegistry{
+public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory implements BeanDefinitionRegistry {
 
     private Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();
 

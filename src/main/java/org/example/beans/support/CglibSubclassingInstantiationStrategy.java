@@ -1,10 +1,12 @@
-package org.example.beans;
+package org.example.beans.support;
 
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
+import org.example.beans.InstantiationStrategy;
+import org.example.beans.config.BeanDefinition;
 import org.example.exception.BeansException;
 
-public class CglibSubclassingInstantiationStrategy implements InstantiationStrategy{
+public class CglibSubclassingInstantiationStrategy implements InstantiationStrategy {
 
     /**
      * 使用CGLIB动态生成子类

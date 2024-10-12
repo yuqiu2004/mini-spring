@@ -1,5 +1,6 @@
 package org.example.beans;
 
+import org.example.beans.config.BeanDefinition;
 import org.example.exception.BeansException;
 
 /**

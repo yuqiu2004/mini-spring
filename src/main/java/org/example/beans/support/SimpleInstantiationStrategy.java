@@ -1,10 +1,12 @@
-package org.example.beans;
+package org.example.beans.support;
 
+import org.example.beans.InstantiationStrategy;
+import org.example.beans.config.BeanDefinition;
 import org.example.exception.BeansException;
 
 import java.lang.reflect.Constructor;
 
-public class SimpleInstantiationStrategy implements InstantiationStrategy{
+public class SimpleInstantiationStrategy implements InstantiationStrategy {
 
     /**
      * 简单的bean实例化策略，根据bean的无参构造函数实例化对象

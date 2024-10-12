@@ -1,9 +1,9 @@
 package org.example.beanTest;
 
-import org.example.beans.BeanDefinition;
-import org.example.beans.DefaultListableBeanFactory;
-import org.example.beans.PropertyValue;
-import org.example.beans.PropertyValues;
+import org.example.beans.config.BeanDefinition;
+import org.example.beans.factory.DefaultListableBeanFactory;
+import org.example.beans.config.PropertyValue;
+import org.example.beans.config.PropertyValues;
 import org.junit.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;

@@ -1,4 +1,4 @@
-package org.example.beans;
+package org.example.beans.factory;
 
 /**
  * 实例工厂

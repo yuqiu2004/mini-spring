@@ -1,4 +1,4 @@
-package org.example.beans;
+package org.example.beans.config;
 
 import java.util.ArrayList;
 import java.util.List;

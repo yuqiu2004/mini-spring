@@ -1,4 +1,6 @@
-package org.example.beans;
+package org.example.beans.registry;
+
+import org.example.beans.config.BeanDefinition;
 
 /**
  * BeanDefinition注册表接口

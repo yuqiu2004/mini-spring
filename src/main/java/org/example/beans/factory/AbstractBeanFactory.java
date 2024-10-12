@@ -1,5 +1,7 @@
-package org.example.beans;
+package org.example.beans.factory;
 
+import org.example.beans.support.DefaultSingletonBeanRegistry;
+import org.example.beans.config.BeanDefinition;
 import org.example.exception.BeansException;
 
 /**

@@ -1,4 +1,4 @@
-package org.example.beans;
+package org.example.beans.registry;
 
 /**
  * 单例注册表

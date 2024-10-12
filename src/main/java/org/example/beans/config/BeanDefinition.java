@@ -1,4 +1,6 @@
-package org.example.beans;
+package org.example.beans.config;
+
+import org.example.beans.config.PropertyValues;
 
 /**
  * 保存bean信息

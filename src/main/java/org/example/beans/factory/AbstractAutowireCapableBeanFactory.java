@@ -1,11 +1,13 @@
-package org.example.beans;
+package org.example.beans.factory;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.TypeUtil;
+import org.example.beans.InstantiationStrategy;
+import org.example.beans.support.SimpleInstantiationStrategy;
+import org.example.beans.config.BeanDefinition;
+import org.example.beans.config.PropertyValue;
 import org.example.core.convert.ConversionService;
 import org.example.exception.BeansException;
-
-import java.lang.reflect.Type;
 
 /**
  * 实现对bean的创建管理

@@ -1,9 +1,11 @@
-package org.example.beans;
+package org.example.beans.support;
+
+import org.example.beans.registry.SingletonBeanRegistry;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry{
+public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
 
     /**单例对象存储容器*/
     private Map<String, Object> singletonObjects = new HashMap<>();
