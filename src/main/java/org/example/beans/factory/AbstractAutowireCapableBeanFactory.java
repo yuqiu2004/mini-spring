@@ -3,6 +3,7 @@ package org.example.beans.factory;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.TypeUtil;
 import org.example.beans.InstantiationStrategy;
+import org.example.beans.config.BeanReference;
 import org.example.beans.support.SimpleInstantiationStrategy;
 import org.example.beans.config.BeanDefinition;
 import org.example.beans.config.PropertyValue;
@@ -54,13 +55,19 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
             for (PropertyValue propertyValue : propertyValues) {
                 String name = propertyValue.getName();
                 Object value = propertyValue.getValue();
-                // 类型转换
-                Class<?> valueClass = value.getClass();
-                Class<?> fieldClass = (Class)TypeUtil.getFieldType(bean.getClass(), name);
-                ConversionService conversionService = getConversionService();
-                if (conversionService != null) {
-                    if (conversionService.canConvert(valueClass, fieldClass)) {
-                        value = conversionService.convert(value, fieldClass);
+                if (value instanceof BeanReference) {
+                    // 获取依赖的bean
+                    BeanReference beanReference =  (BeanReference) value;
+                    value = getBean(beanReference.getBeanName());
+                } else {
+                    // 类型转换
+                    Class<?> valueClass = value.getClass();
+                    Class<?> fieldClass = (Class)TypeUtil.getFieldType(bean.getClass(), name);
+                    ConversionService conversionService = getConversionService();
+                    if (conversionService != null) {
+                        if (conversionService.canConvert(valueClass, fieldClass)) {
+                            value = conversionService.convert(value, fieldClass);
+                        }
                     }
                 }
                 // 通过反射设置属性

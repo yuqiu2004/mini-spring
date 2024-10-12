@@ -5,13 +5,13 @@ package org.example.beans.config;
  */
 public class BeanReference {
 
-    private String beanName;
+    private final String beanName;
 
     public String getBeanName() {
         return beanName;
     }
 
-    public void setBeanName(String beanName) {
+    public BeanReference(String beanName){
         this.beanName = beanName;
     }
 }
