@@ -1,4 +1,4 @@
-package org.example.bean;
+package org.example.beans;
 
 /**
  * 保存bean信息

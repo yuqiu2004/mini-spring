@@ -1,4 +1,4 @@
-package org.example.bean;
+package org.example.beans;
 
 import java.util.HashMap;
 import java.util.Map;

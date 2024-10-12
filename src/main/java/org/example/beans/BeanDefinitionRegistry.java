@@ -1,4 +1,4 @@
-package org.example.bean;
+package org.example.beans;
 
 /**
  * BeanDefinition注册表接口

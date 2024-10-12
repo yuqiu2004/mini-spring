@@ -1,4 +1,4 @@
-package org.example.bean;
+package org.example.beans;
 
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;

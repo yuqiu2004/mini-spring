@@ -1,7 +1,7 @@
 package org.example.beanTest;
 
-import org.example.bean.BeanDefinition;
-import org.example.bean.DefaultListableBeanFactory;
+import org.example.beans.BeanDefinition;
+import org.example.beans.DefaultListableBeanFactory;
 import org.junit.Test;
 
 public class BeanDefinitionAndBeanDefinitionRegistryTest {
