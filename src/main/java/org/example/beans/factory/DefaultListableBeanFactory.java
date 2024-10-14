@@ -59,14 +59,4 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
     public boolean containsBeanDefinition(String beanName) {
         return beanDefinitionMap.containsKey(beanName);
     }
-
-    @Override
-    public Object applyBeanPostProcessorsBeforeInitialization(Object existingBean, String beanName) throws BeansException {
-        return null;
-    }
-
-    @Override
-    public Object applyBeanPostProcessorsAfterInitialization(Object existingBean, String beanName) throws BeansException {
-        return null;
-    }
 }
