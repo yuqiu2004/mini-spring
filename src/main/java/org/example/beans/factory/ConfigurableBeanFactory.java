@@ -1,10 +1,15 @@
 package org.example.beans.factory;
 
+import org.example.beans.config.BeanPostProcessor;
 import org.example.beans.registry.SingletonBeanRegistry;
 
 public interface ConfigurableBeanFactory extends SingletonBeanRegistry, HierarchicalBeanFactory {
 
-//    void addBeanPostProcessor(BeanPostProcessor beanPostProcessor);
+    /**
+     * 添加后置操作器
+     * @param beanPostProcessor
+     */
+    void addBeanPostProcessor(BeanPostProcessor beanPostProcessor);
 
     /**
      * 销毁单例bean
