@@ -8,7 +8,7 @@ import org.example.exception.BeansException;
  * 抽象实例工厂
  * 使用单例的、懒汉式的模式创建和获取实例
  */
-public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory {
+public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements ConfigurableBeanFactory {
 
     @Override
     public Object getBean(String name) throws BeansException {

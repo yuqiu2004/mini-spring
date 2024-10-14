@@ -13,7 +13,7 @@ import org.example.exception.BeansException;
 /**
  * 实现对bean的创建管理
  */
-public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory{
+public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory implements AutowireCapableBeanFactory{
 
     private InstantiationStrategy instantiationStrategy = new SimpleInstantiationStrategy();
 
