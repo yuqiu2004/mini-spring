@@ -46,7 +46,7 @@ public class BeanDefinition {
     private boolean lazyInit = false;
 
     public BeanDefinition(Class<?> clazz){
-        this.beanClass = clazz;
+        this(clazz, null);
     }
 
     public BeanDefinition(Class beanClass, PropertyValues propertyValues) {
