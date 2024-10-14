@@ -2,6 +2,8 @@ package org.example.beanTest;
 
 import org.example.beans.factory.DefaultListableBeanFactory;
 import org.example.beans.xml.XmlBeanDefinitionReader;
+import org.example.to.Car;
+import org.example.to.Person;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
