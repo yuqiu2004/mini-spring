@@ -2,6 +2,7 @@ package org.example.beans.factory;
 
 import org.example.beans.config.BeanPostProcessor;
 import org.example.beans.registry.SingletonBeanRegistry;
+import org.example.core.convert.ConversionService;
 
 public interface ConfigurableBeanFactory extends SingletonBeanRegistry, HierarchicalBeanFactory {
 
@@ -14,13 +15,13 @@ public interface ConfigurableBeanFactory extends SingletonBeanRegistry, Hierarch
     /**
      * 销毁单例bean
      */
-//    void destroySingletons();
+    void destroySingletons();
 
 //    void addEmbeddedValueResolver(StringValueResolver valueResolver);
 
 //    String resolveEmbeddedValue(String value);
 
-//    void setConversionService(ConversionService conversionService);
+    void setConversionService(ConversionService conversionService);
 
 //    ConversionService getConversionService();
 }

@@ -5,4 +5,6 @@ package org.example.beans.registry;
  */
 public interface SingletonBeanRegistry {
     Object getSingleton(String name);
+
+    void addSingleton(String beanName, Object singletonObjects);
 }
