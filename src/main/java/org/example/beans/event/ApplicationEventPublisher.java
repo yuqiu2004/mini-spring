@@ -1,4 +1,4 @@
-package org.example.beans.context;
+package org.example.beans.event;
 
 /**
  * 事件发布者接口

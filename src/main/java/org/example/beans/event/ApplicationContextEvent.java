@@ -1,4 +1,7 @@
-package org.example.beans.context;
+package org.example.beans.event;
+
+import org.example.beans.context.ApplicationContext;
+import org.example.beans.event.ApplicationEvent;
 
 public abstract class ApplicationContextEvent extends ApplicationEvent {
     public ApplicationContextEvent(ApplicationContext source) {

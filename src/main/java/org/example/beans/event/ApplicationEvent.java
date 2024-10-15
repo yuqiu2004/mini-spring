@@ -1,4 +1,4 @@
-package org.example.beans.context;
+package org.example.beans.event;
 
 import java.util.EventObject;
 
