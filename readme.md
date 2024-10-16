@@ -48,3 +48,6 @@
     - `publishEvent(new ContextRefreshedEvent(this))`
     - `applicationEventMulticaster.multicastEvent(event)` 即调用监听器中对该事件感兴趣的对应方法
       - 感兴趣: 该事件是监听器的泛型参数的类型
+> 所以总的来说 application context中的refresh方法 在创建bean实例前自动调用了beanFactoryPostProcessor 
+> 
+> 而在创建实例后(doCreateBean) 执行了beanPostProcessor
