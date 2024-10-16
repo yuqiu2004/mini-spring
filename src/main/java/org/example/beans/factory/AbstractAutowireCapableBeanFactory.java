@@ -45,7 +45,9 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
             throw new BeansException("new instance bean failed", e);
         }
         registerDisposableBeanIfNecessary(name, bean, beanDefinition);
-        addSingleton(name, bean);
+        if (beanDefinition.isSingleton()) { // 单例作用域的才加入
+            addSingleton(name, bean);
+        }
         return bean;
     }
 

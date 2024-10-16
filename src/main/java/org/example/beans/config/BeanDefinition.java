@@ -38,6 +38,7 @@ public class BeanDefinition {
 
     private boolean singleton = true;
 
+    /** 原型模式 通过克隆方式创建新的对象，适合创建复杂对象或避免高创建成本的场景 */
     private boolean prototype = false;
 
     /**
