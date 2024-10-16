@@ -1,6 +1,9 @@
 package org.example.to;
 
-public class Person {
+import org.example.beans.support.DisposableBean;
+import org.example.beans.support.InitializingBean;
+
+public class Person implements InitializingBean, DisposableBean {
     private String name;
 
     private int age;
@@ -38,4 +41,23 @@ public class Person {
                 ", age=" + age +
                 '}';
     }
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("I died in the method named destroy");
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("I was born in the method named afterPropertiesSet");
+    }
+
+    public void customInitMethod() {
+        System.out.println("I was born in the method named customInitMethod");
+    }
+
+    public void customDestroyMethod() {
+        System.out.println("I died in the method named customDestroyMethod");
+    }
+
 }

@@ -12,6 +12,8 @@ public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
 
     /**单例对象存储容器*/
     private Map<String, Object> singletonObjects = new HashMap<>();
+
+    /**拥有自定义销毁方法的对象*/
     private Map<String, DisposableBean> disposableBeans = new HashMap<>();
 
     @Override
@@ -34,5 +36,9 @@ public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
                 throw new BeansException("Destroy method on bean with name '" + beanName + "' threw an exception", e);
             }
         }
+    }
+
+    public void registerDisposableBean(String beanName, DisposableBean bean) {
+        this.disposableBeans.put(beanName, bean);
     }
 }
