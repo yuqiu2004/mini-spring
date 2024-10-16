@@ -20,6 +20,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader i
 
     public static final String CONVERSION_SERVICE_BEAN_NAME = "conversionService";
 
+    /** 注册监听器和发布事件的对象 */
     private ApplicationEventMulticaster applicationEventMulticaster;
 
     @Override
