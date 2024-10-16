@@ -12,10 +12,12 @@ public class CustomerBeanPostProcessor implements BeanPostProcessor {
         if ("car".equals(beanName)) {
             ((Car) bean).setBrand("lamborghini");
         }
-        return bean;    }
+        return bean;
+    }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("CustomerBeanPostProcessor#postProcessAfterInitialization");
-        return bean;    }
+        return bean;
+    }
 }
