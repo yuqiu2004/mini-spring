@@ -6,6 +6,7 @@ import cn.hutool.core.util.TypeUtil;
 import org.example.beans.InstantiationStrategy;
 import org.example.beans.config.BeanPostProcessor;
 import org.example.beans.config.BeanReference;
+import org.example.beans.context.BeanFactoryAware;
 import org.example.beans.support.DisposableBean;
 import org.example.beans.support.DisposableBeanAdapter;
 import org.example.beans.support.InitializingBean;
@@ -64,6 +65,10 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
     }
 
     protected Object initializeBean(String name, Object bean, BeanDefinition beanDefinition) {
+        // 让实现BeanFactoryAware的类能感知所属的BeanFactory
+        if (bean instanceof BeanFactoryAware) {
+            ((BeanFactoryAware)bean).setBeanFactory(this);
+        }
         //执行BeanPostProcessor的前置处理
         Object wrappedBean = applyBeanPostProcessorsBeforeInitialization(bean, name);
         try {
