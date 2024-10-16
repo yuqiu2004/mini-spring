@@ -1,12 +1,15 @@
 package org.example.beans.factory;
 
 import org.example.beans.config.BeanPostProcessor;
+import org.example.beans.config.FactoryBean;
 import org.example.beans.support.DefaultSingletonBeanRegistry;
 import org.example.beans.config.BeanDefinition;
 import org.example.exception.BeansException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 抽象实例工厂
@@ -16,13 +19,40 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
 
     private List<BeanPostProcessor> beanPostProcessors = new ArrayList<>();
 
+    private final Map<String, Object> factoryBeanObjectCache = new HashMap<>();
+
+
     @Override
     public Object getBean(String name) throws BeansException {
         if(null == name || "".equals(name)) return null;
         Object o = getSingleton(name);
-        if(null != o) return o;
+        if(null != o) return getObjectForBeanInstance(o, name);
         BeanDefinition beanDefinition = getBeanDefinition(name);
-        return createBean(name, beanDefinition);
+        Object bean = createBean(name, beanDefinition);
+        return getObjectForBeanInstance(bean, name);
+    }
+
+    protected Object getObjectForBeanInstance(Object bean, String name) {
+        Object object = bean;
+        if (bean instanceof FactoryBean) {
+            FactoryBean factoryBean = (FactoryBean) bean;
+            try {
+                if (factoryBean.isSingleton()) {
+                    //singleton作用域bean，从缓存中获取
+                    object = this.factoryBeanObjectCache.get(name);
+                    if (object == null) {
+                        object = factoryBean.getObject();
+                        this.factoryBeanObjectCache.put(name, object);
+                    }
+                } else {
+                    //prototype作用域bean，新创建bean
+                    object = factoryBean.getObject();
+                }
+            } catch (Exception ex) {
+                throw new BeansException("FactoryBean threw exception on object[" + name + "] creation", ex);
+            }
+        }
+        return object;
     }
 
     protected abstract BeanDefinition getBeanDefinition(String name) throws BeansException;
