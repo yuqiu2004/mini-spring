@@ -1,9 +1,9 @@
 package org.example.to;
 
-import org.example.beans.context.ApplicationContext;
-import org.example.beans.context.ApplicationContextAware;
-import org.example.beans.context.BeanFactoryAware;
-import org.example.beans.factory.BeanFactory;
+import org.example.ioc.context.ApplicationContext;
+import org.example.ioc.context.ApplicationContextAware;
+import org.example.ioc.context.BeanFactoryAware;
+import org.example.ioc.factory.BeanFactory;
 import org.example.exception.BeansException;
 
 public class HelloService implements ApplicationContextAware, BeanFactoryAware {

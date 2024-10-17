@@ -1,10 +1,10 @@
 package org.example.config;
 
-import org.example.beans.config.BeanDefinition;
-import org.example.beans.config.BeanFactoryPostProcessor;
-import org.example.beans.config.PropertyValue;
-import org.example.beans.config.PropertyValues;
-import org.example.beans.factory.ConfigurableListableBeanFactory;
+import org.example.ioc.config.BeanDefinition;
+import org.example.ioc.config.BeanFactoryPostProcessor;
+import org.example.ioc.config.PropertyValue;
+import org.example.ioc.config.PropertyValues;
+import org.example.ioc.factory.ConfigurableListableBeanFactory;
 import org.example.exception.BeansException;
 
 public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor {

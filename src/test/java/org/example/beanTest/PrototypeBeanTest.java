@@ -1,6 +1,6 @@
 package org.example.beanTest;
 
-import org.example.beans.context.ClassPathXmlApplicationContext;
+import org.example.ioc.context.ClassPathXmlApplicationContext;
 import org.example.to.Car;
 import org.junit.Test;
 

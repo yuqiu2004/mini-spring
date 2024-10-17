@@ -1,7 +1,7 @@
 package org.example.to.event;
 
-import org.example.beans.event.ApplicationListener;
-import org.example.beans.event.ContextClosedEvent;
+import org.example.ioc.event.ApplicationListener;
+import org.example.ioc.event.ContextClosedEvent;
 
 public class ContextClosedEventListener implements ApplicationListener<ContextClosedEvent> {
     @Override

@@ -1,7 +1,7 @@
 package org.example.beanTest;
 
-import org.example.beans.factory.DefaultListableBeanFactory;
-import org.example.beans.xml.XmlBeanDefinitionReader;
+import org.example.ioc.factory.DefaultListableBeanFactory;
+import org.example.ioc.xml.XmlBeanDefinitionReader;
 import org.example.config.CustomBeanFactoryPostProcessor;
 import org.example.config.CustomerBeanPostProcessor;
 import org.example.to.Car;

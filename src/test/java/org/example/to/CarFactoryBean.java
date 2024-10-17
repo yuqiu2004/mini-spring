@@ -1,6 +1,6 @@
 package org.example.to;
 
-import org.example.beans.config.FactoryBean;
+import org.example.ioc.config.FactoryBean;
 
 public class CarFactoryBean implements FactoryBean<Car> {
 

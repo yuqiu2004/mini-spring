@@ -1,6 +1,6 @@
 package org.example.to.event;
 
-import org.example.beans.event.ApplicationListener;
+import org.example.ioc.event.ApplicationListener;
 
 public class CustomEventListener implements ApplicationListener<CustomEvent> {
     @Override

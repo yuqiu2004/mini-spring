@@ -1,7 +1,7 @@
 package org.example.to;
 
-import org.example.beans.support.DisposableBean;
-import org.example.beans.support.InitializingBean;
+import org.example.ioc.support.DisposableBean;
+import org.example.ioc.support.InitializingBean;
 
 public class Person implements InitializingBean, DisposableBean {
     private String name;

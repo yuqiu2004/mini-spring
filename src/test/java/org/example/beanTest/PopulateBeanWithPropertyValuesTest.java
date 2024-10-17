@@ -1,10 +1,10 @@
 package org.example.beanTest;
 
-import org.example.beans.config.BeanDefinition;
-import org.example.beans.config.BeanReference;
-import org.example.beans.factory.DefaultListableBeanFactory;
-import org.example.beans.config.PropertyValue;
-import org.example.beans.config.PropertyValues;
+import org.example.ioc.config.BeanDefinition;
+import org.example.ioc.config.BeanReference;
+import org.example.ioc.factory.DefaultListableBeanFactory;
+import org.example.ioc.config.PropertyValue;
+import org.example.ioc.config.PropertyValues;
 import org.example.to.Car;
 import org.example.to.Person;
 import org.junit.Test;

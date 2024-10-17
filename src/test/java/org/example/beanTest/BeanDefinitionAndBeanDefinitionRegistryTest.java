@@ -1,7 +1,7 @@
 package org.example.beanTest;
 
-import org.example.beans.config.BeanDefinition;
-import org.example.beans.factory.DefaultListableBeanFactory;
+import org.example.ioc.config.BeanDefinition;
+import org.example.ioc.factory.DefaultListableBeanFactory;
 import org.example.to.HelloService;
 import org.junit.Test;
 

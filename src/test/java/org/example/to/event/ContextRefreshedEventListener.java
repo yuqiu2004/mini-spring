@@ -1,7 +1,7 @@
 package org.example.to.event;
 
-import org.example.beans.event.ApplicationListener;
-import org.example.beans.event.ContextRefreshedEvent;
+import org.example.ioc.event.ApplicationListener;
+import org.example.ioc.event.ContextRefreshedEvent;
 
 public class ContextRefreshedEventListener implements ApplicationListener<ContextRefreshedEvent> {
     @Override
