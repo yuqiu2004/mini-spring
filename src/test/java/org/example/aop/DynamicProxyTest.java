@@ -2,6 +2,7 @@ package org.example.aop;
 
 import org.example.aop.proxy.CglibAopProxy;
 import org.example.aop.proxy.JdkDynamicAopProxy;
+import org.example.aop.proxy.ProxyFactory;
 import org.example.aop.proxy.TargetSource;
 import org.example.aop.proxy.support.AdvisedSupport;
 import org.example.to.WorldService;
@@ -36,6 +37,19 @@ public class DynamicProxyTest {
     @Test
     public void testCglibDynamicProxy() throws Exception {
         WorldService proxy = (WorldService) new CglibAopProxy(advisedSupport).getProxy();
+        proxy.explode();
+    }
+
+    @Test
+    public void testProxyFactory() throws Exception {
+        // 使用jdk动态代理
+        advisedSupport.setProxyTargetClass(false);
+        WorldService proxy = (WorldService) new ProxyFactory(advisedSupport).getProxy();
+        proxy.explode();
+
+        // 使用cglib动态代理
+        advisedSupport.setProxyTargetClass(true);
+        proxy = (WorldService) new ProxyFactory(advisedSupport).getProxy();
         proxy.explode();
     }
 }
