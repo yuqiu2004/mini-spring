@@ -1,17 +1,21 @@
 package org.example.aop;
 
+import org.example.aop.proxy.CglibAopProxy;
 import org.example.aop.proxy.JdkDynamicAopProxy;
 import org.example.aop.proxy.TargetSource;
 import org.example.aop.proxy.support.AdvisedSupport;
 import org.example.to.WorldService;
 import org.example.to.WorldServiceImpl;
 import org.example.to.WorldServiceInterceptor;
+import org.junit.Before;
 import org.junit.Test;
 
 public class DynamicProxyTest {
 
-    @Test
-    public void testJdkDynamicProxy() throws Exception {
+    private AdvisedSupport advisedSupport;
+
+    @Before
+    public void setup() {
         WorldService worldService = new WorldServiceImpl();
         AdvisedSupport advisedSupport = new AdvisedSupport();
         TargetSource targetSource = new TargetSource(worldService);
@@ -20,8 +24,18 @@ public class DynamicProxyTest {
         advisedSupport.setTargetSource(targetSource);
         advisedSupport.setMethodInterceptor(methodInterceptor);
         advisedSupport.setMethodMatcher(methodMatcher);
+        this.advisedSupport = advisedSupport;
+    }
 
+    @Test
+    public void testJdkDynamicProxy() throws Exception {
         WorldService proxy = (WorldService) new JdkDynamicAopProxy(advisedSupport).getProxy();
+        proxy.explode();
+    }
+
+    @Test
+    public void testCglibDynamicProxy() throws Exception {
+        WorldService proxy = (WorldService) new CglibAopProxy(advisedSupport).getProxy();
         proxy.explode();
     }
 }
